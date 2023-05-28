@@ -9,8 +9,8 @@ describe( 'Run a pull', function() {
 		cy.get( '#wp-submit' ).click();
 	} );
 	
-	it( 'can run a pull', function() {
+	it.only( 'can run a pull', function() {
 		cy.wait( 2000 );
-		cy.url().should('eq', 'http://localhost/ae_wp_dev_v2/wp-admin/');
+		cy.url().should('eq', Cypress.env( "devHostUrl" )+'/wp-admin/');
 	} );
 });
