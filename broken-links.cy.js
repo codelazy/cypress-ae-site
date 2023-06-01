@@ -5,7 +5,7 @@ describe('Test Broken Links', () => {
           // browser with a 720p monitor
           cy.viewport(1920, 720)
         });
-
+        
         it('Migration to Dev Env.(' + Cypress.env( "devHostUrl" ) + ') is completed', () => {
 
             cy.visit('/')
