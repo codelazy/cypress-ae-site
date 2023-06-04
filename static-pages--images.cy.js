@@ -54,7 +54,13 @@ describe('<img> WEBP Format', () => {
                 .each($el => {
                     cy.wrap($el).scrollIntoView();
 
-                    cy.wrap($el.data('src')).should('include', dataSrc).should('include', '.webp');
+                    cy.wrap($el.data('src'))
+                    .should('include', dataSrc)
+                    .should('include', '.webp');
+                    
+                    //Ensure the natural width and height is greater than 0.
+                    expect($el[0].naturalWidth).to.be.greaterThan(0);
+                    expect($el[0].naturalHeight).to.be.greaterThan(0);
                     
 
                 }).then(($el) => {
